@@ -1,0 +1,10 @@
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        reach = 0
+        for n in nums:
+            if reach < 0:
+                return False
+            if n > reach:
+                reach = n
+            reach -= 1
+        return True
